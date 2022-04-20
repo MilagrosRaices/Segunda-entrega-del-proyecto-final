@@ -1,12 +1,12 @@
 (function(){
 	// Variables
-	var lista = document.getElementById("lista"),
+	 const lista = document.getElementById("lista"),
 		tareaInput = document.getElementById("tareaInput"),
 		btnNuevaTarea = document.getElementById("btn-agregar");
 
 	// Funciones
-	var agregarTarea = function(){
-		var tarea = tareaInput.value,
+	const agregarTarea = function(){
+		let tarea = tareaInput.value,
 			nuevaTarea = document.createElement("li"),
 			enlace = document.createElement("a"),
 			contenido = document.createTextNode(tarea);
@@ -28,19 +28,19 @@
 
 		tareaInput.value = "";
 
-		for (var i = 0; i <= lista.children.length -1; i++) {
+		for (let i = 0; i <= lista.children.length -1; i++) {
 			lista.children[i].addEventListener("click", function(){
 				this.parentNode.removeChild(this);
 			});
 		}
 
 	};
-	var comprobarInput = function(){
+	const comprobarInput = function(){
 		tareaInput.className = "";
 		teareaInput.setAttribute("placeholder", "Agrega tu tarea");
 	};
 
-	var eleminarTarea = function(){
+	const eleminarTarea = function(){
 		this.parentNode.removeChild(this);
 	};
 
@@ -53,7 +53,7 @@
 	tareaInput.addEventListener("click", comprobarInput);
 
 	// Borrando Elementos de la lista
-	for (var i = 0; i <= lista.children.length -1; i++) {
+	for (let i = 0; i <= lista.children.length -1; i++) {
 		lista.children[i].addEventListener("click", eleminarTarea);
 	}
 }());
